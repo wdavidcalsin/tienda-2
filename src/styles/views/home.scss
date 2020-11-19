@@ -1,0 +1,7 @@
+.section-home {
+   //    background-color: orange;
+   & > div {
+      display: flex;
+      flex-flow: row wrap;
+   }
+}
