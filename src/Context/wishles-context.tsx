@@ -4,10 +4,10 @@ import { WishlesInterface } from "./wishlesInter";
 export const WishlesContext = createContext<WishlesInterface>({} as any);
 
 export function WishlesProvider({ children }: any) {
-   const [value_, setValue] = useState<number>(1);
+   const [value_, setValue_] = useState<number>(0);
 
    return (
-      <WishlesContext.Provider value={{ value_, setValue }}>
+      <WishlesContext.Provider value={{ value_, setValue_ }}>
          {children}
       </WishlesContext.Provider>
    );
@@ -15,9 +15,9 @@ export function WishlesProvider({ children }: any) {
 
 export function useWishles() {
    const context = useContext(WishlesContext);
-   const { value_, setValue } = context;
+   const { value_, setValue_ } = context;
    return {
       value_,
-      setValue,
+      setValue_,
    };
 }
